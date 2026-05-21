@@ -1,0 +1,6 @@
+{
+  "name": "custom-engine-yolo",
+  "description": "YOLO object detection processor for Custom Engine. Use when adding YOLOv8/v11/v10/v26 object detection, bounding box drawing, or object counting to a Custom Engine pipeline.",
+  "author": "OpenZeka",
+  "skills": "./"
+}

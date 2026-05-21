@@ -1,0 +1,6 @@
+{
+  "name": "custom-engine-ocr",
+  "description": "OCR (Optical Character Recognition) processor for Custom Engine. Use when adding text reading, license plate recognition, or document scanning to a Custom Engine pipeline.",
+  "author": "OpenZeka",
+  "skills": "./"
+}

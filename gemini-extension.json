@@ -1,0 +1,6 @@
+{
+  "name": "custom-engine-coding-agent",
+  "description": "Agentic skills for generating Custom Engine processor modules: YOLO detection, OCR, object tracking, and pipeline development",
+  "version": "1.0.0",
+  "contextFileName": "GEMINI.md"
+}

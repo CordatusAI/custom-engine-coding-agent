@@ -1,0 +1,6 @@
+{
+  "name": "custom-engine-dev",
+  "description": "Custom Engine processor pipeline development with BaseProcessor interface. Use when building video processing modules, YOLO inference, OCR, object tracking, or any frame processing for Custom Engine.",
+  "author": "OpenZeka",
+  "skills": "./"
+}

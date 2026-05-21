@@ -1,0 +1,39 @@
+{
+  "name": "custom-engine-coding-agent",
+  "version": "1.0.0",
+  "description": "Agentic skills for generating Custom Engine processor modules: YOLO detection, OCR, object tracking, and pipeline development.",
+  "author": {
+    "name": "OpenZeka",
+    "url": "https://github.com/<org>"
+  },
+  "homepage": "https://github.com/<org>/custom-engine-coding-agent",
+  "repository": "https://github.com/<org>/custom-engine-coding-agent",
+  "license": "Apache-2.0",
+  "keywords": [
+    "custom-engine",
+    "video-processing",
+    "yolo",
+    "ocr",
+    "object-tracking",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Custom Engine Coding Agent",
+    "shortDescription": "YOLO detection, OCR, object tracking, and pipeline development skills for video processing",
+    "longDescription": "Use Custom Engine Coding Agent to generate processor modules for video stream processing pipelines — YOLO object detection, OCR text reading, multi-object tracking, and pipeline architecture.",
+    "developerName": "OpenZeka",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Create a Custom Engine pipeline that runs YOLOv8s detection and displays the object count.",
+      "Add OCR to read text from detected objects in a video stream."
+    ],
+    "websiteURL": "https://github.com/<org>/custom-engine-coding-agent",
+    "brandColor": "#2563EB"
+  }
+}

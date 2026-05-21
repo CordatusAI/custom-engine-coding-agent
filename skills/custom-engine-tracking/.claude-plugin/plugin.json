@@ -1,0 +1,6 @@
+{
+  "name": "custom-engine-tracking",
+  "description": "Object tracking processor for Custom Engine. Use when adding multi-object tracking, ID assignment, or trajectory analysis to a Custom Engine pipeline. Requires detection processor (e.g., YOLO) to run first.",
+  "author": "OpenZeka",
+  "skills": "./"
+}

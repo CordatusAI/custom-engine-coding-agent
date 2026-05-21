@@ -1,0 +1,19 @@
+{
+  "name": "custom-engine-coding-agent",
+  "description": "Agentic skills for AI coding assistants to generate Custom Engine processor modules for video stream processing",
+  "version": "1.0.0",
+  "author": {
+    "name": "OpenZeka"
+  },
+  "homepage": "https://github.com/<org>/custom-engine-coding-agent",
+  "repository": "https://github.com/<org>/custom-engine-coding-agent",
+  "license": "Apache-2.0",
+  "keywords": [
+    "custom-engine",
+    "video-processing",
+    "yolo",
+    "ocr",
+    "object-tracking",
+    "skills"
+  ]
+}

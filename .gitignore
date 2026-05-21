@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+__pycache__/
+*.pyc
+.env
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.opencode/node_modules/
+.opencode/package.json
+.opencode/package-lock.json
+.private-journal/
+.claude/
+DeepStream_Coding_Agent/
+superpowers/

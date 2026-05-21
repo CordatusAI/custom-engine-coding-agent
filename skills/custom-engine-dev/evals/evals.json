@@ -1,0 +1,92 @@
+{
+  "skill_name": "custom-engine-dev",
+  "evals": [
+    {
+      "id": 1,
+      "name": "basic-yolo-processor",
+      "prompt": "Create a YOLOv8s object detection processor for Custom Engine that draws bounding boxes and adds detection count to the frame.",
+      "expected_output": "A processor class extending BaseProcessor with process() method, added via add_processor(), using onnxruntime with GPU fallback, writing to custom_engine/ directory.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Processor extends BaseProcessor",
+          "type": "contains_phrase",
+          "phrase": "BaseProcessor"
+        },
+        {
+          "text": "Implements process() method",
+          "type": "contains_phrase",
+          "phrase": "def process"
+        },
+        {
+          "text": "Added via add_processor()",
+          "type": "contains_phrase",
+          "phrase": "add_processor"
+        },
+        {
+          "text": "Uses onnxruntime for inference",
+          "type": "contains_phrase",
+          "phrase": "onnxruntime"
+        },
+        {
+          "text": "GPU fallback to CPU handled",
+          "type": "contains_pattern",
+          "pattern": "CUDAExecutionProvider"
+        },
+        {
+          "text": "Module written to custom_engine/",
+          "type": "contains_pattern",
+          "pattern": "custom_engine/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "processor-without-baseprocessor-rejected",
+      "prompt": "Add a simple grayscale conversion to the custom engine pipeline by writing code directly inside __call__.",
+      "expected_output": "Agent refuses and creates a BaseProcessor-based GrayscaleProcessor instead, never modifying __call__ directly.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Does not modify __call__ directly",
+          "type": "not_contains",
+          "phrase": "def __call__"
+        },
+        {
+          "text": "Creates a BaseProcessor subclass",
+          "type": "contains_phrase",
+          "phrase": "BaseProcessor"
+        },
+        {
+          "text": "Uses add_processor to register",
+          "type": "contains_phrase",
+          "phrase": "add_processor"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "chained-processors",
+      "prompt": "Create a pipeline that first runs YOLO detection and then runs OCR only on detected regions. Chain them properly.",
+      "expected_output": "Two separate processors added in order — YOLO first, OCR second — with YOLO detections passed via metadata for ROI cropping.",
+      "files": [],
+      "assertions": [
+        {
+          "text": "Two processors created",
+          "type": "contains_pattern",
+          "pattern": "BaseProcessor"
+        },
+        {
+          "text": "YOLO processor added before OCR",
+          "type": "contains_pattern",
+          "pattern": "add_processor"
+        },
+        {
+          "text": "Metadata passed between processors",
+          "type": "contains_phrase",
+          "phrase": "metadata"
+        }
+      ]
+    }
+  ]
+}
