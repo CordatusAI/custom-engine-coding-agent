@@ -2,13 +2,15 @@
 
 Agentic skills for AI coding assistants (opencode, Claude Code, Cursor, Codex) to generate **Custom Engine** processor modules for video stream processing pipelines.
 
+This project is designed for use with the **Custom Engine** feature of the [Cordatus](https://app.cordatus.ai) platform. Cordatus is an AI-powered video intelligence platform that enables deploying and managing computer vision pipelines on edge devices. Custom Engine is the Cordatus module that lets developers write their own processing logic in Python — this coding agent provides the skills needed to generate correct, pipeline-ready processor code for it.
+
 > **Disclaimer:** Code generated with AI coding assistants is intended as a development starting point. All generated code must undergo your full software development lifecycle (SDLC) — including code review, testing, and security validation — before production use.
 
 ---
 
 ## Overview
 
-Custom Engine is a modular video processing framework where each processing step is a **processor** implementing the `BaseProcessor` interface. Processors are chained into a pipeline inside `CustomEngine.__call__()`, operating on each frame and accumulating metadata.
+Custom Engine is a modular video processing framework within the Cordatus platform where each processing step is a **processor** implementing the `BaseProcessor` interface. Processors are chained into a pipeline inside `CustomEngine.__call__()`, operating on each frame and accumulating metadata.
 
 This project provides **agentic skills** that teach AI coding assistants how to:
 
@@ -156,77 +158,9 @@ Input → YOLODetector → ObjectTracker → [DrawAnnotations] → Output
 
 ## Installing Skills
 
-Custom Engine Coding Agent supports multiple AI coding assistants through native plugin systems. When installed, skills are automatically discovered and the `using-custom-engine` bootstrap is injected at session start — no manual file referencing needed.
+Find the skills directory for your AI coding assistant and copy the skill folders from this project into it.
 
-### OpenCode
-
-Add to the `plugin` array in your `opencode.json` (global or project-level):
-
-```json
-{
-  "plugin": ["custom-engine-coding-agent@git+https://github.com/<org>/custom-engine-coding-agent.git"]
-}
-```
-
-Restart OpenCode. The plugin registers all skills and injects the bootstrap context automatically.
-
-Verify by asking: "What Custom Engine skills do you have?"
-
-For detailed instructions, see [`.opencode/INSTALL.md`](.opencode/INSTALL.md).
-
-### Claude Code
-
-Install as a Claude Code plugin:
-
-```
-/plugin install custom-engine-coding-agent
-```
-
-Or tell Claude Code:
-
-```
-Fetch and follow instructions from https://raw.githubusercontent.com/<org>/custom-engine-coding-agent/main/.opencode/INSTALL.md
-```
-
-### Cursor
-
-Install as a Cursor plugin:
-
-```
-/add-plugin custom-engine-coding-agent
-```
-
-Or search for "Custom Engine" in the Cursor plugin marketplace.
-
-### Codex
-
-Install from the Codex plugin marketplace:
-
-1. Open **Plugins** in the sidebar
-2. Search for **Custom Engine Coding Agent**
-3. Click **Install Plugin**
-
-### Gemini CLI
-
-Install as a Gemini CLI extension:
-
-```
-gemini extensions install https://github.com/<org>/custom-engine-coding-agent
-```
-
-### Other Coding Assistants
-
-For any AI coding assistant that supports agentic skills, copy the skill directories into the assistant's skills folder:
-
-```bash
-# Replace <skills-dir> with your tool's skills directory
-cp -r skills/custom-engine-dev <skills-dir>/
-cp -r skills/custom-engine-yolo <skills-dir>/
-cp -r skills/custom-engine-ocr <skills-dir>/
-cp -r skills/custom-engine-tracking <skills-dir>/
-```
-
-Common skill directory locations:
+**Skill directories by tool:**
 
 | Tool | User-level path | Workspace-level path |
 |------|----------------|---------------------|
@@ -234,6 +168,18 @@ Common skill directory locations:
 | Claude Code | `~/.claude/skills/` | `<workspace>/.claude/skills/` |
 | Cursor | `~/.cursor/skills/` | `<workspace>/.cursor/skills/` |
 | Codex | `~/.codex/skills/` | `<workspace>/.codex/skills/` |
+| GitHub Copilot | `<workspace>/.github/` | `<workspace>/.github/` |
+
+Copy these four folders into the skills directory you identified:
+
+```
+skills/custom-engine-dev/
+skills/custom-engine-yolo/
+skills/custom-engine-ocr/
+skills/custom-engine-tracking/
+```
+
+Restart your coding assistant after copying.
 
 ### Verifying the Installation
 
